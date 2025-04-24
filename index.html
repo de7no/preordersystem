@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STETHS School Lunch Pre-Order System (beta)</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <h1>STETHS School Lunch Pre-Order System (beta)</h1>
+    </header>
+
+    <main>
+        <form id="preOrderForm" action="thank.html" method="POST">
+            <label for="studentName">Students Name:</label>
+            <input type="text" id="studentName" name="studentName" required>
+
+            <label for="grade">Grade:</label>
+            <select id="grade" name="grade" required>
+                <option value="">Select your grade</option>
+                <option value="7">Grade 7</option>
+                <option value="7A">7A</option>
+                <option value="7B">7B</option>
+                <option value="7C">7C</option>
+                <option value="7D">7D</option>
+                <option value="7E">7E</option>
+                <option value="7F">7F</option>
+                <option value="7G">7G</option>
+            </select>
+
+            <label for="food">Select your food:</label>
+            <select id="food" name="food" required>
+                <option value="">Select your food</option>
+                <option value="Cheese Patty">Cheese Patty</option>
+                <option value="Chicken Patty">Chicken Patty</option>
+                <option value="Beef Patty">Beef Patty</option>
+                <option value="Coco Bread">Coco Bread</option>
+                <option value="Bun & Cheese">Bun & Cheese</option>
+            </select>
+
+            <label for="drink">Select your drink:</label>
+            <select id="drink" name="drink" required>
+                <option value="">Select your drink</option>
+                <option value="Orange Juice">Orange Juice</option>
+                <option value="Flavored Splash">Flavored Splash</option>
+                <option value="Box Juice">Box Juice</option>
+                <option value="Cranberry Wata">Cranberry Wata</option>
+                <option value="Water">Water</option>
+                <option value="Pepsi">Pepsi</option>
+                <option value="D&G">D&G</option>
+                <option value="Bigga">Bigga</option>
+            </select>
+
+            <label for="specialRequests">Special Requests:</label>
+            <textarea id="specialRequests" name="specialRequests"></textarea>
+
+            <button type="submit">Submit Order</button>
+        </form>
+        <div id="message"></div>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 School Lunch Program (JD🌟)</p>
+    </footer>
+
+    <!-- Place the JavaScript here, before the closing body tag -->
+    <script>
+        document.getElementById('preOrderForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Stop the default form submission
+
+            // Display a message before redirecting
+            document.getElementById('message').textContent = "Order submitted! Redirecting...";
+
+            // Wait 2 seconds, then go to thank.html
+            setTimeout(function() {
+                window.location.href = "thank.html";
+            }, 2000);
+        });
+    </script>
+
+</body>
+</html>

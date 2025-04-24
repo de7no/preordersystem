@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            padding: 50px;
+            background-image: url('channels4_profile.jpg'); /* Background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            font-weight: bold;
+            color: white; /* Ensure text is visible on background */
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('channels4_profile.jpg'); /* Background image */
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            filter: blur(5px); /* Apply blur to background */
+            z-index: -1; /* Push background behind content */
+        }
+
+        #countdown {
+            font-size: 24px;
+            font-weight: bold;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Thank you! Your order has been submitted!!</h1>
+        <p>You will be redirected back to the home page in <span id="countdown">10</span> seconds.</p>
+    </header>
+
+    <script>
+        let countdown = 10; // Start countdown from 15 seconds
+
+        function updateCountdown() {
+            document.getElementById("countdown").textContent = countdown;
+            if (countdown === 0) {
+                window.location.href = "index.html"; // Redirect to homepage
+            } else {
+                countdown--; // Decrease the countdown
+                setTimeout(updateCountdown, 1000); // Run function again after 1 second
+            }
+        }
+
+        // Start the countdown on page load
+        updateCountdown();
+    </script>
+</body>
+</html>
